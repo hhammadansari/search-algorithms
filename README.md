@@ -14,6 +14,8 @@ This is a Python program that implements a maze solver using depth-first search 
 ## Usage
 
 ### 1. Prepare a Maze File
+Create a maze by runnig `create.py` OR
+
 Create a text file (e.g., `maze1.txt`) with:
 
 - `A` representing the starting position.
@@ -22,6 +24,8 @@ Create a text file (e.g., `maze1.txt`) with:
 - Spaces (` `) representing open paths.
 
 ### 2. Run the Maze Solver
+To solve the maze place your file in `gui.py` for GUI based representation OR
+
 Execute the script to solve the maze:
 ```sh
 python solve.py
@@ -33,7 +37,9 @@ The script prints the initial maze, solves it, and prints the solved maze with t
 ## File Structure
 ```
 maze-solver/
-│── maze.py         # Maze solver implementation
-│── solve.py        # Script to test the maze solver
-│── maze1.txt       # Sample maze file
+│── solver.py         # Maze solver implementation
+│── create.py         # Create you own maze
+│── gui.py            # GUI based representation
+│── solve.py          # Script to test the maze solver
+│── maze1.txt         # Sample maze file
 ```

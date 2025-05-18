@@ -1,6 +1,6 @@
-from maze import Maze
+from solver import Maze
 
-maze = Maze("maze1.txt")
+maze = Maze("maze3.txt")
 
 print("\nInitial state:")
 maze.print()
