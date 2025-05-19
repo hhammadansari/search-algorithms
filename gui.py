@@ -13,7 +13,7 @@ RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 
-file = "maze.txt"
+file = "maze0.txt" # Change this to your maze file
 maze = Maze(file)
 
 def draw_maze(screen, maze, solution=None, explored=set()):
@@ -35,6 +35,21 @@ def draw_maze(screen, maze, solution=None, explored=set()):
             pygame.draw.rect(screen, GRAY, rect, 1)
 
 
+def evaluate_difficulty(explored_count, total_cells):
+    ratio = explored_count / total_cells
+    if ratio < 0.1:
+        return "Very Easy, Try Again"
+    elif ratio < 0.25:
+        return "Easy, But Not Too Easy"
+    elif ratio < 0.5:
+        return "Medium, Not Bad"
+    elif ratio < 0.75:
+        return "Hard, Nice Job"
+    else:
+        return "Very Hard, Excellent Work"
+
+
+
 def visualize(file, use_bfs=True):
     maze = Maze(file)
     pygame.init()
@@ -46,6 +61,7 @@ def visualize(file, use_bfs=True):
     start = Node(state=maze.start, parent=None, action=None)
     frontier.add(start)
     explored = set()
+    explored_count = 0
 
     while True:
         clock.tick(FPS)
@@ -59,6 +75,7 @@ def visualize(file, use_bfs=True):
 
         node = frontier.remove()
         explored.add(node.state)
+        explored_count += 1
 
         if node.state == maze.goal:
             actions = []
@@ -78,9 +95,10 @@ def visualize(file, use_bfs=True):
                 child = Node(state=state, parent=node, action=action)
                 frontier.add(child)
 
+    difficulty = evaluate_difficulty(explored_count, maze.height * maze.width)
+    print(f"\nStates Explored: {explored_count}")
+    print(f"Difficulty Rating: {difficulty}")
+
 
 if __name__ == '__main__':
-    # Change this filename or wrap it with user input
     visualize(file, use_bfs=False)  # Change to False for DFS
-
-print("States Explored:", maze.num_explored,"\n")
