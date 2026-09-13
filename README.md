@@ -1,6 +1,6 @@
 # Maze Solver
 
-This is a Python program that implements a maze solver using depth-first search (DFS) and breadth-first search (BFS). The solver reads a maze from a text file and finds a path from the start ('A') to the goal ('B').
+This is a Python program that implements a maze solver using either Depth-first search (DFS) or Breadth-first search (BFS). The solver reads a maze from a text file and finds a path from the start ('A') to the goal ('B').
 
 ## Features
 - Interactive Maze Builder (`create.py`)
