@@ -44,8 +44,6 @@ Edit the last line of `gui.py` to switch algorithms:
 visualize("maze.txt", use_bfs=True)   # True for BFS, False for DFS
 ```
 
-OR
-
 Execute the script to solve the maze:
 ```sh
 python solve.py
