@@ -212,7 +212,7 @@ the number of states explored.
 ```bash
 python gui.py
 ```
-This loads whichever file and algorithm are set at the top/bottom of
+This loads whichever file and algorithm are set at the bottom of
 `gui.py` (`maze0.txt` and DFS by default, currently).
 
 **Build your own maze:**
