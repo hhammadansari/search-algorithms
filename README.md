@@ -177,7 +177,7 @@ Which maze file is loaded (`file = "maze0.txt"`) and which algorithm runs (`visu
 
 `gui.py` computes `explored_count / (maze.height * maze.width)` after solving and buckets the result into one of five labels (from "Very Easy" to "Very Hard, Excellent Work").
 
-Worth being precise about what this actually measures: it is **not** an objective measure of how hard a maze is to navigate. It's the number of cells the *specific search run* ended up removing from the frontier, divided by the *total* grid area, walls included, not just walkable cells. Note that: (1) the same maze can score differently under BFS vs. DFS, since they explore different numbers of cells to reach the same goal, and (2) a maze that's mostly walls will structurally score "easier" than an equally-convoluted maze with fewer walls, purely because the denominator is larger. It's best understood as a rough, algorithm-dependent proxy for search effort on a given run — not a property of the maze itself.
+Worth being precise about what this actually measures: it is **not** an objective measure of how hard a maze is to navigate. It's the number of cells the *specific search run* ended up removing from the frontier, divided by the *total* grid area, walls included, not just walkable cells. Note that: (1) the same maze can score differently under BFS vs. DFS, since they explore different numbers of cells to reach the same goal, and (2) a maze that's mostly walls will structurally score "easier" than an equally-convoluted maze with fewer walls, purely because the denominator is larger. It's best understood as a rough, algorithm-dependent proxy for search effort on a given run, not a property of the maze itself.
 
 ## BFS vs. DFS - what you'll actually observe
 
