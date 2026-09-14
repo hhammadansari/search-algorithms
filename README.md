@@ -67,7 +67,7 @@ Initialize frontier with the start node
       ↓
 Loop: remove one node from the frontier
       ↓
-Is it the goal? - yes ──→ walk parent pointers back to start → reverse → done
+Is it the goal? - yes -→ walk parent pointers back to start → reverse → done
       │ no
       ↓
 Mark it explored, look up its open neighbors
